@@ -279,7 +279,7 @@ pre {
 
     <div class="container">
 
-      <div class="generated-on">Mon Mar 25 2019 20:18:49 GMT-0300 (GMT-03:00)</div>
+      <div class="generated-on">Tue Mar 26 2019 14:15:39 GMT-0300 (GMT-03:00)</div>
 
       <div class="row">
         <div class="chart col-lg-6 col-md-6" id="piechart_features"></div>
@@ -440,7 +440,7 @@ pre {
                             
                           
                               <span class="step-duration">
-                               6s 686ms
+                               8s 48ms
                               </span>
                             
                          
@@ -512,7 +512,7 @@ pre {
                             
                           
                               <span class="step-duration">
-                               421ms
+                               563ms
                               </span>
                             
                          
@@ -546,7 +546,7 @@ pre {
                             
                           
                               <span class="step-duration">
-                               4s 107ms
+                               4s 250ms
                               </span>
                             
                          
@@ -580,7 +580,7 @@ pre {
                             
                           
                               <span class="step-duration">
-                               31ms
+                               23ms
                               </span>
                             
                          
@@ -685,7 +685,6 @@ pre {
 
     if (total === 1) {
         title = total + ' ' + chartData.title.slice(0, -1)
-		
     } else {
         title = total + ' ' + chartData.title;
     }
@@ -699,30 +698,19 @@ pre {
         fontSize: '13',
         fontName: '"Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif',
         slices: {
-		  1: {offset: 0.4},
-		  2: {offset: 0.4},
-		  3: {offset: 0.4},
-		  4: {offset: 0.4},
-		  5: {offset: 0.4},
-		  6: {offset: 0.4}
-		},
+            1: {offset: 0.4},
+            2: {offset: 0.4},
+            3: {offset: 0.4},
+            4: {offset: 0.4},
+            5: {offset: 0.4},
+            6: {offset: 0.4}
+        },
         titleTextStyle: {
             fontSize: '13',
             color: '#5e5e5e'
         }
     };
-	
-	if (total === 1){	
-		options.slices = {
-		  1: {offset: 0.0},
-		  2: {offset: 0.0},
-		  3: {offset: 0.0},
-		  4: {offset: 0.0},
-		  5: {offset: 0.0},
-		  6: {offset: 0.0}
-		};
-	}
-	
+
     var chart = new google.visualization.PieChart(document.getElementById('piechart_' + chartData.title.toLowerCase()));
     chart.draw(data, options);
 }

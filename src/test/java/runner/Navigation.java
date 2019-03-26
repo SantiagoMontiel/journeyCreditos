@@ -7,7 +7,7 @@ import org.openqa.selenium.TakesScreenshot;
 
 public class Navigation {
 
-    protected BrowserDriver browserDriver = new BrowserDriver();
+    private BrowserDriver browserDriver = new BrowserDriver();
 
     public void navigate()throws Throwable {
         browserDriver.loadPage(

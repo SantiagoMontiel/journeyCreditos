@@ -11,7 +11,7 @@ public class BrowserDriver {
     private static WebDriver mDriver;
 
     public BrowserDriver(){
-        System.setProperty("webdriver.chrome.driver","C:\\chromeDriver/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","C:\\chromedriver/chromedriver.exe");
     	mDriver = new ChromeDriver();
     }
 
