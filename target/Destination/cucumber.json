@@ -1,0 +1,178 @@
+[
+  {
+    "comments": [
+      {
+        "line": 1,
+        "value": "#language es."
+      },
+      {
+        "line": 2,
+        "value": "#Author: ssosa@baufest.com"
+      },
+      {
+        "line": 3,
+        "value": "#Keywords Summary : Crédito empresas"
+      },
+      {
+        "line": 4,
+        "value": "#Feature: List of scenarios."
+      },
+      {
+        "line": 5,
+        "value": "#Scenario: Business rule through list of steps with arguments."
+      },
+      {
+        "line": 6,
+        "value": "#Given: Some precondition step"
+      },
+      {
+        "line": 7,
+        "value": "#When: Some key actions"
+      },
+      {
+        "line": 8,
+        "value": "#Then: To observe outcomes or validation"
+      },
+      {
+        "line": 9,
+        "value": "#And,But: To enumerate more Given,When,Then steps"
+      },
+      {
+        "line": 10,
+        "value": "#Scenario Outline: List of steps for data-driven as an Examples and \u003cplaceholder\u003e"
+      },
+      {
+        "line": 11,
+        "value": "#Examples: Container for s table"
+      },
+      {
+        "line": 12,
+        "value": "#Background: List of steps run before each of the scenarios"
+      },
+      {
+        "line": 13,
+        "value": "#\"\"\" (Doc Strings)"
+      },
+      {
+        "line": 14,
+        "value": "#| (Data Tables)"
+      },
+      {
+        "line": 15,
+        "value": "#@ (Tags/Labels):To group Scenarios"
+      },
+      {
+        "line": 16,
+        "value": "#\u003c\u003e (placeholder)"
+      },
+      {
+        "line": 17,
+        "value": "#\"\""
+      },
+      {
+        "line": 18,
+        "value": "## (Comments)"
+      },
+      {
+        "line": 19,
+        "value": "#Sample Feature Definition Template"
+      }
+    ],
+    "line": 22,
+    "elements": [
+      {
+        "line": 25,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Background",
+        "steps": [
+          {
+            "result": {
+              "duration": 6686566380,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "El usuario se encuentra en la pagina principal",
+            "match": {
+              "location": "Test.el_usuario_se_encuentra_en_la_pagina_principal()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "line": 28,
+        "name": "Loguearse con un usuario valido",
+        "description": "",
+        "id": "login;loguearse-con-un-usuario-valido",
+        "after": [
+          {
+            "result": {
+              "duration": 156411,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Test.takeScreenshot(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 421204484,
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "El usuario ingresa usuario y password",
+            "match": {
+              "location": "Test.el_usuario_ingresa_usuario_y_password()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 4107667821,
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "Hace click en aceptar",
+            "match": {
+              "location": "Test.hace_click_en_aceptar()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 31416559,
+              "status": "passed"
+            },
+            "line": 31,
+            "name": "Se muestra el Onboarding del usuario logueado.",
+            "match": {
+              "location": "Test.se_muestra_el_Onboarding_del_usuario_logueado()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Login",
+    "description": "Verificar que el usuario se puede loguear correctamente en el sitio",
+    "id": "login",
+    "keyword": "Feature",
+    "uri": "login.feature",
+    "tags": [
+      {
+        "line": 21,
+        "name": "@login"
+      },
+      {
+        "line": 21,
+        "name": "@slow"
+      }
+    ]
+  }
+]
