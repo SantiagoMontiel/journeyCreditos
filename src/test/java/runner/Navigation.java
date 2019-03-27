@@ -4,14 +4,14 @@ import cucumber.api.Scenario;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebElement;
 
 public class Navigation {
 
     private BrowserDriver browserDriver = new BrowserDriver();
 
-    public void navigate()throws Throwable {
-        browserDriver.loadPage(
-                "http://localhost:3000/api-poc/login");
+    public void navigate(String url)throws Throwable {
+        browserDriver.loadPage(url);
     }
 
     public void takeScreenshot(Scenario scenario) {

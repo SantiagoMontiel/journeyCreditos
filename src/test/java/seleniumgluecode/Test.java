@@ -8,11 +8,13 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.By;
 import runner.Navigation;
+import pageObjects.Login;
 
 import static java.lang.Thread.sleep;
 
 public class Test extends Navigation {
 
+	Login pageLogin = new Login();
 	@After
 	public void takeScreenshot(Scenario scenario) {
 		super.takeScreenshot(scenario);
@@ -20,22 +22,22 @@ public class Test extends Navigation {
 	
 	@Given("^El usuario se encuentra en la pagina principal$")
 	public void el_usuario_se_encuentra_en_la_pagina_principal() throws Throwable {
-		navigate();
+		navigate(pageLogin.getUrl());
 	}
 
 	@When("^El usuario ingresa usuario y password$")
 	public void el_usuario_ingresa_usuario_y_password() throws Throwable {
 
-		complete(By.name("userName"), "Santi");
+		complete(By.name(pageLogin.getFieldUserName()), "Santi");
 
-		complete(By.name("password"), "Manda");
+		complete(By.name(pageLogin.getFieldPass()), "Manda");
 
 	}
 
 	@When("^Hace click en aceptar$")
 	public void hace_click_en_aceptar() throws Throwable {
 
-		click(By.xpath("//*[@id=\"root\"]/div/div/div[2]/div[2]/form/div[5]/button[1]"));
+		click(By.xpath(pageLogin.getAccept()));
 		sleep(4000);
 	}
 
