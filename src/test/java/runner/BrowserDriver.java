@@ -2,6 +2,7 @@ package runner;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.UnreachableBrowserException;
 
 import java.util.concurrent.TimeUnit;
@@ -11,8 +12,15 @@ public class BrowserDriver {
     private static WebDriver mDriver;
 
     public BrowserDriver(){
+        //Chrome
+        System.out.println("Chrome is selected");
         System.setProperty("webdriver.chrome.driver","C:\\chromedriver/chromedriver.exe");
     	mDriver = new ChromeDriver();
+
+    	//Internet Explorer
+//        System.out.println("Internet Explorer is selected");
+//        System.setProperty("webdriver.ie.driver","C:\\iedriver/IEDriverServer32.exe");
+//        mDriver = new InternetExplorerDriver();
     }
 
     public WebDriver getDriver(){

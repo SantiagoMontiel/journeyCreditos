@@ -21,38 +21,27 @@ public class Navigation {
         }
     }
 
-    public void complete(String type, String field, String value)throws Throwable{
+    public void complete(By element, String value)throws Throwable{
 
-        if ("name".equals(type)) {
-            browserDriver.getDriver().findElement(By.name(field)).sendKeys(value);
-        } else if ("xpath".equals(type)) {
-            browserDriver.getDriver().findElement(By.xpath(field)).sendKeys(value);
-        } else{
-            throw new Exception("No se pudo cumpletar" + type + "con el valor: " + value);
-        }
+        browserDriver.getDriver().findElement(element).sendKeys(value);
+//            throw new Exception("No se pudo completar" + type + "con el valor: " + value);
     }
 
-    public void clickear(String type, String button) throws Exception {
-        if ("name".equals(type)) {
-            browserDriver.getDriver().findElement(By.name(button)).click();
-        } else if ("xpath".equals(type)) {
-            browserDriver.getDriver().findElement(By.xpath(button)).click();
-        } else{
-            throw new Exception("No se pudo clickear sobre el boton " + button);
-        }
-    }
+    public void click(By element) {
 
-    public boolean exists(String type, String value) throws Exception {
-
-        if ("name".equals(type)) {
-            return browserDriver.getDriver().findElements(By.name(value)).size() > 0;
-        } else if ("xpath".equals(type)) {
-            return browserDriver.getDriver().findElements(By.xpath(value)).size() > 0;
-        } else{
-            throw new Exception("El tipo: " + type + "no es valido");
-        }
+            browserDriver.getDriver().findElement(element).click();
+        //    throw new Exception("No se pudo clickear sobre el boton " + button);
 
     }
 
+    public boolean exists(By element) throws Exception {
+
+        if (browserDriver.getDriver().findElements(element).size() > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+//            throw new Exception("El tipo: " + type + "no es valido");
 
 }
