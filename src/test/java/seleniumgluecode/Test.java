@@ -28,16 +28,16 @@ public class Test extends Navigation {
 	@When("^El usuario ingresa usuario y password$")
 	public void el_usuario_ingresa_usuario_y_password() throws Throwable {
 
-		complete(By.name(pageLogin.getFieldUserName()), "Santi");
+		complete(pageLogin.getFieldUser(), "Santi");
 
-		complete(By.name(pageLogin.getFieldPass()), "Manda");
+		complete(pageLogin.getFieldPass(), "Manda");
 
 	}
 
 	@When("^Hace click en aceptar$")
 	public void hace_click_en_aceptar() throws Throwable {
 
-		click(By.xpath(pageLogin.getAccept()));
+		click(pageLogin.getButtonAccept());
 		sleep(4000);
 	}
 
