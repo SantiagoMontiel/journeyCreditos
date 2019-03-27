@@ -23,7 +23,7 @@ Feature: Login
   Verificar que el usuario se puede loguear correctamente en el sitio
 
   Background:
-    Given El usuario se encuentra en la pagina principal
+    Given El usuario se encuentra en la pagina de login
 
   Scenario: Loguearse con un usuario valido
     When El usuario ingresa usuario y password

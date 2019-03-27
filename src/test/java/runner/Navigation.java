@@ -44,4 +44,8 @@ public class Navigation {
     }
 //            throw new Exception("El tipo: " + type + "no es valido");
 
+    public void close(){
+        browserDriver.close();
+    }
+
 }
