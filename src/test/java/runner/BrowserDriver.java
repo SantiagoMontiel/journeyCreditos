@@ -2,6 +2,7 @@ package runner;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.UnreachableBrowserException;
 
@@ -14,8 +15,14 @@ public class BrowserDriver {
     public BrowserDriver(){
         //Chrome
         System.out.println("Chrome is selected");
+
+        //Deshabilitar extensiones para permitir que el navegador se ejecute correctamente
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--disable-notifications");
+        options.setExperimentalOption("useAutomationExtension", false);
         System.setProperty("webdriver.chrome.driver","C:\\chromedriver/chromedriver.exe");
-    	mDriver = new ChromeDriver();
+
+    	mDriver = new ChromeDriver(options);
 
     	//Internet Explorer
 //        System.out.println("Internet Explorer is selected");
