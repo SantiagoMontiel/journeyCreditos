@@ -31,10 +31,10 @@ public class Test extends Navigation {
 		navigate(pageLogin.getUrl());
 	}
 
-	@When("^El usuario ingresa usuario y password$")
-	public void el_usuario_ingresa_usuario_y_password() throws Throwable {
-		complete(pageLogin.getFieldUser(), "Santi");
-		complete(pageLogin.getFieldPass(), "Manda");
+	@When("^El usuario ingresa \"([^\"]*)\" y password \"([^\"]*)\"$")
+	public void el_usuario_ingresa_y_password(String user, String password) throws Throwable {
+		complete(pageLogin.getFieldUser(), user);
+		complete(pageLogin.getFieldPass(), password);
 	}
 
 	@When("^Hace click en aceptar$")
@@ -50,23 +50,7 @@ public class Test extends Navigation {
 		}
 	}
 
-	@When("^El usuario ingresa santi y password manda$")
-	public void el_usuario_ingresa_santi_y_password_manda() throws Throwable {
-		// Write code here that turns the phrase above into concrete actions
 
-	}
-
-	@Then("^Se muestra el Onboarding del usuario logueado success\\.$")
-	public void se_muestra_el_Onboarding_del_usuario_logueado_success() throws Throwable {
-		// Write code here that turns the phrase above into concrete actions
-
-	}
-
-	@When("^El usuario ingresa mex y password gato$")
-	public void el_usuario_ingresa_mex_y_password_gato() throws Throwable {
-		// Write code here that turns the phrase above into concrete actions
-
-	}
 
 	
 }

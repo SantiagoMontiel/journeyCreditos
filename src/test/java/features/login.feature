@@ -25,22 +25,17 @@ Feature: Login
   Background:
     Given El usuario se encuentra en la pagina de login
 
+
   @Login
-  Scenario: Loguearse con un usuario valido
-    When El usuario ingresa usuario y password
+  Scenario Outline: Loguearse con un usuario valido
+    When El usuario ingresa "<user>" y password "<pass>"
     And  Hace click en aceptar
     Then Se muestra el Onboarding del usuario logueado.
 
-#  @Outline
-#  Scenario Outline: Loguearse con un usuario valido
-#    When El usuario ingresa <user> y password <pass>
-#    And  Hace click en aceptar
-#    Then Se muestra el Onboarding del usuario logueado <status>.
-#
-#    Examples:
-#    | user | pass | status |
-#    | santi | manda | success |
-#    | mex   | gato  | success |
+    Examples:
+    | user | pass | status |
+    | santi | manda | success |
+    | mex   | gato  | success |
 
 
 #  @tag2

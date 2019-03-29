@@ -20,14 +20,15 @@ public class BrowserDriver {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-notifications");
         options.setExperimentalOption("useAutomationExtension", false);
-        System.setProperty("webdriver.chrome.driver","C:\\chromedriver/chromedriver.exe");
 
-    	mDriver = new ChromeDriver(options);
+        System.setProperty("webdriver.chrome.driver","C:\\chromedriver/chromedriver.exe");
+        mDriver = new ChromeDriver(options);
+
 
     	//Internet Explorer
-//        System.out.println("Internet Explorer is selected");
-//        System.setProperty("webdriver.ie.driver","C:\\iedriver/IEDriverServer32.exe");
-//        mDriver = new InternetExplorerDriver();
+        //System.out.println("Internet Explorer is selected");
+        //System.setProperty("webdriver.ie.driver","C:\\iedriver/IEDriverServer_Win32_3.9.0/IEDriverServer.exe");
+        //mDriver = new InternetExplorerDriver();
     }
 
     public WebDriver getDriver(){
