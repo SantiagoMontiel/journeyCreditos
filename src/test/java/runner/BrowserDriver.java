@@ -26,9 +26,9 @@ public class BrowserDriver {
 
 
     	//Internet Explorer
-        //System.out.println("Internet Explorer is selected");
-        //System.setProperty("webdriver.ie.driver","C:\\iedriver/IEDriverServer_Win32_3.9.0/IEDriverServer.exe");
-        //mDriver = new InternetExplorerDriver();
+//        System.out.println("Internet Explorer is selected");
+//        System.setProperty("webdriver.ie.driver","C:\\iedriver/IEDriverServer.exe");
+//        mDriver = new InternetExplorerDriver();
     }
 
     public WebDriver getDriver(){
@@ -64,7 +64,7 @@ public class BrowserDriver {
         }
     }
 
-    public static void loadPage(String url){;
+    public static void loadPage(String url){
         mDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         mDriver.get(url);
         mDriver.manage().window().maximize();
