@@ -9,13 +9,14 @@ import runner.Navigation;
 
 import static java.lang.Thread.sleep;
 
-public class AgreementsTest extends Navigation {
+public class AgreementsTest {
 
     Login pageLogin = new Login();
+    Navigation navigator = new Navigation();
 
     @Given("^El usuario se encuentra en la pagina de ingreso de cuit$")
     public void el_usuario_se_encuentra_en_la_pagina_principal() throws Throwable {
-        navigate(pageLogin.getUrl());
+        navigator.navigate(pageLogin.getUrl());
     }
 
     @Then("^Se muestra el Onboarding del usuario logueado\\.$")
@@ -27,13 +28,13 @@ public class AgreementsTest extends Navigation {
 
     @When("^Hace click en Enviar$")
     public void hace_click_en_Enviar() throws Throwable {
-        click(pageLogin.getButtonEnviar());
+        navigator.click(pageLogin.getButtonEnviar());
         sleep(2000);
     }
 
     @When("^El usuario ingresa \"([^\"]*)\"$")
     public void el_usuario_ingresa(String cuit) throws Throwable {
-        complete(pageLogin.getFieldCuit(), cuit);
+        navigator.complete(pageLogin.getFieldCuit(), cuit);
     }
 
     @Then("^Se muestra el Onboarding del usuario logueado con margenes sin disponibles\\.$")
@@ -48,7 +49,7 @@ public class AgreementsTest extends Navigation {
 
     @After
     public void closeBrowser(){
-        close();
+        navigator.close();
     }
 
 }
