@@ -12,18 +12,19 @@ import pageObjects.Login;
 
 import static java.lang.Thread.sleep;
 
-public class Test extends Navigation {
+public class LoginTest{
 
 	Login pageLogin = new Login();
+	Navigation navigator = new Navigation();
 
 	@After
 	public void takeScreenshot(Scenario scenario) {
-		super.takeScreenshot(scenario);
+		navigator.takeScreenshot(scenario);
 	}
 
 	@After
 	public void closeBrowser(){
-		close();
+		navigator.close();
 	}
 
 
