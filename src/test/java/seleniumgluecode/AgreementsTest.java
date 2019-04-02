@@ -19,8 +19,8 @@ public class AgreementsTest {
         navigator.navigate(pageLogin.getUrl());
     }
 
-    @Then("^Se muestra el Onboarding del usuario logueado\\.$")
-    public void se_muestra_el_Onboarding_del_usuario_logueado() throws Throwable {
+    @Then("^Se muestra el Onboarding del usuario con acuerdo vigente$")
+    public void se_muestra_el_Onboarding_del_usuario_con_acuerdo_vigente() throws Throwable {
 //		if(!exists(By.xpath("//*[@id=\"root\"]/div/div/main"))){
 //			throw new Exception("No se muestra el Onboarding correctamente");
 //		}
@@ -37,12 +37,12 @@ public class AgreementsTest {
         navigator.complete(pageLogin.getFieldCuit(), cuit);
     }
 
-    @Then("^Se muestra el Onboarding del usuario logueado con margenes sin disponibles\\.$")
+    @Then("^Se muestra el Onboarding del usuario con acuerdo vigente sin margen disponible$")
     public void se_muestra_el_Onboarding_del_usuario_logueado_con_margenes_sin_disponibles() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
     }
 
-    @Then("^Se muestra el Onboarding del usuario logueado sin margenes \\.$")
+    @Then("^Se muestra el Onboarding del usuario sin acuerdo vigente$")
     public void se_muestra_el_Onboarding_del_usuario_logueado_sin_margenes() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
     }

@@ -27,18 +27,10 @@ public class LoginTest{
 		navigator.close();
 	}
 
-
-//	@When("^El usuario ingresa \"([^\"]*)\" y password \"([^\"]*)\"$")
-//	public void el_usuario_ingresa_y_password(String user, String password) throws Throwable {
-//		complete(pageLogin.getFieldUser(), user);
-//		complete(pageLogin.getFieldPass(), password);
-//	}
-//
-//	@When("^Hace click en aceptar$")
-//	public void hace_click_en_aceptar() throws Throwable {
-//		click(pageLogin.getButtonAccept());
-//		sleep(3000);
-//	}
+	@Then("^Se muestra el Onboarding del usuario logueado$")
+	public void se_muestra_el_Onboarding_del_usuario_logueado() throws Throwable {
+		// Write code here that turns the phrase above into concrete actions
+	}
 
 
 }

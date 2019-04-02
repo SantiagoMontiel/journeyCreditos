@@ -26,10 +26,10 @@ Feature: Login
     Given El usuario se encuentra en la pagina de ingreso de cuit
 
   @conMargenes
-  Scenario Outline: Loguearse con clientes válidos por cuit
+  Scenario Outline: Login con cliente valido
     When El usuario ingresa "<cuit>"
     And Hace click en Enviar
-    Then Se muestra el Onboarding del usuario logueado.
+    Then Se muestra el Onboarding del usuario logueado
 
     Examples:
       | cuit |

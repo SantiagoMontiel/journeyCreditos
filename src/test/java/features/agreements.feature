@@ -20,55 +20,37 @@
 
 @cliente @pymes @representanteLegal @solaFirma
 Feature: Agreements
-  Verificar que el usuario se puede loguear correctamente en el sitio
+  Verificar para distintos clientes los acuerdos disponibles
 
   Background:
     Given El usuario se encuentra en la pagina de ingreso de cuit
 
   @conMargenes
-  Scenario Outline: Loguearse con clientes válidos por cuit
+  Scenario Outline: Login con cliente con acuerdo vigente
     When El usuario ingresa "<cuit>"
     And Hace click en Enviar
-    Then Se muestra el Onboarding del usuario logueado.
+    Then Se muestra el Onboarding del usuario con acuerdo vigente
 
     Examples:
     | cuit |
     | 30500089624 |
 
   @sinDisponibles
-  Scenario Outline: Loguearse con clientes válidos por cuit sin disponible
+  Scenario Outline: Login con cliente con acuerdo vigente sin margenes disponibles
     When El usuario ingresa "<cuit>"
     And Hace click en Enviar
-    Then Se muestra el Onboarding del usuario logueado con margenes sin disponibles.
+    Then Se muestra el Onboarding del usuario con acuerdo vigente sin margen disponible
 
     Examples:
       | cuit |
       | 30507255201 |
 
   @sinAcuerdo
-  Scenario Outline: Loguearse con clientes válidos por cuit sin acuerdos vigentes para sola firma
+  Scenario Outline: Login con cliente sin acuerdo vigente
     When El usuario ingresa "<cuit>"
     And Hace click en Enviar
-    Then Se muestra el Onboarding del usuario logueado sin margenes .
+    Then Se muestra el Onboarding del usuario sin acuerdo vigente
 
     Examples:
       | cuit |
       | 20077212397 |
-
-#  @Login
-#  Scenario Outline: Loguearse con un usuario valido
-#    When El usuario ingresa "<user>" y password "<pass>"
-#    And  Hace click en aceptar
-#    Then Se muestra el Onboarding del usuario logueado.
-#
-#    Examples:
-#    | user | pass | status |
-#    | santi | manda | success |
-#    | mex   | gato  | success |
-
-
-#  @tag2
-#  Scenario: Loguearse con un usuario valido
-#    When El usuario navega a la pagina de login
-#    And El usuario ingresa usuario y password
-#    Then Se muestra el Onboarding del usuario logueado 2.
