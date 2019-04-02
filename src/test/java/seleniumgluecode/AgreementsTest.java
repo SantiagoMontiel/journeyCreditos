@@ -15,8 +15,14 @@ public class AgreementsTest {
     Navigation navigator = new Navigation();
 
     @Given("^El usuario se encuentra en la pagina de ingreso de cuit$")
-    public void el_usuario_se_encuentra_en_la_pagina_principal() throws Throwable {
+    public void el_usuario_se_encuentra_en_la_pagina_de_ingreso_de_cuit() throws Throwable {
         navigator.navigate(pageLogin.getUrl());
+    }
+
+    @Then("^Se muestra el Onboarding del usuario logueado$")
+    public void se_muestra_el_Onboarding_del_usuario_logueado() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        sleep(1000);
     }
 
     @Then("^Se muestra el Onboarding del usuario con acuerdo vigente$")
@@ -38,13 +44,15 @@ public class AgreementsTest {
     }
 
     @Then("^Se muestra el Onboarding del usuario con acuerdo vigente sin margen disponible$")
-    public void se_muestra_el_Onboarding_del_usuario_logueado_con_margenes_sin_disponibles() throws Throwable {
+    public void se_muestra_el_Onboarding_del_usuario_con_acuerdo_vigente_sin_margen_disponible() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
+        sleep(1000);
     }
 
     @Then("^Se muestra el Onboarding del usuario sin acuerdo vigente$")
-    public void se_muestra_el_Onboarding_del_usuario_logueado_sin_margenes() throws Throwable {
+    public void se_muestra_el_Onboarding_del_usuario_sin_acuerdo_vigente() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
+        sleep(1000);
     }
 
     @After

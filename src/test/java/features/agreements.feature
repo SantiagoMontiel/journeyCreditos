@@ -22,11 +22,12 @@
 Feature: Agreements
   Verificar para distintos clientes los acuerdos disponibles
 
-  Background:
-    Given El usuario se encuentra en la pagina de ingreso de cuit
+#  Background:
+#    Given El usuario se encuentra en la pagina de ingreso de cuit
 
   @conMargenes
   Scenario Outline: Login con cliente con acuerdo vigente
+    Given El usuario se encuentra en la pagina de ingreso de cuit
     When El usuario ingresa "<cuit>"
     And Hace click en Enviar
     Then Se muestra el Onboarding del usuario con acuerdo vigente
@@ -37,6 +38,7 @@ Feature: Agreements
 
   @sinDisponibles
   Scenario Outline: Login con cliente con acuerdo vigente sin margenes disponibles
+    Given El usuario se encuentra en la pagina de ingreso de cuit
     When El usuario ingresa "<cuit>"
     And Hace click en Enviar
     Then Se muestra el Onboarding del usuario con acuerdo vigente sin margen disponible
@@ -47,6 +49,7 @@ Feature: Agreements
 
   @sinAcuerdo
   Scenario Outline: Login con cliente sin acuerdo vigente
+    Given El usuario se encuentra en la pagina de ingreso de cuit
     When El usuario ingresa "<cuit>"
     And Hace click en Enviar
     Then Se muestra el Onboarding del usuario sin acuerdo vigente

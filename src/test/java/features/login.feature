@@ -22,11 +22,12 @@
 Feature: Login
   Verificar que el usuario se puede loguear correctamente en el sitio
 
-  Background:
-    Given El usuario se encuentra en la pagina de ingreso de cuit
+#  Background:
+#    Given El usuario se encuentra en la pagina de ingreso de cuit
 
-  @conMargenes
+  @exitoso
   Scenario Outline: Login con cliente valido
+    Given El usuario se encuentra en la pagina de ingreso de cuit
     When El usuario ingresa "<cuit>"
     And Hace click en Enviar
     Then Se muestra el Onboarding del usuario logueado
