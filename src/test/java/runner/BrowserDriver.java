@@ -11,24 +11,39 @@ import java.util.concurrent.TimeUnit;
 public class BrowserDriver {
 
     private static WebDriver mDriver;
+    private Boolean isIE;
 
-    public BrowserDriver(){
-        //Chrome
-        System.out.println("Chrome is selected");
+    public BrowserDriver(Integer browser){
 
-        //Deshabilitar extensiones para permitir que el navegador se ejecute correctamente
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--disable-notifications");
-        options.setExperimentalOption("useAutomationExtension", false);
+        switch (browser){
+            case 1:
+                System.out.println("Chrome is selected");
 
-        System.setProperty("webdriver.chrome.driver","C:\\chromedriver/chromedriver.exe");
-        mDriver = new ChromeDriver(options);
+                //Deshabilitar extensiones para permitir que el navegador se ejecute correctamente
+                ChromeOptions options = new ChromeOptions();
+                options.addArguments("--disable-notifications");
+                options.setExperimentalOption("useAutomationExtension", false);
 
+                System.setProperty("webdriver.chrome.driver","C:\\chromedriver/chromedriver.exe");
+                mDriver = new ChromeDriver(options);
+                isIE = false;
 
-    	//Internet Explorer
-//        System.out.println("Internet Explorer is selected");
-//        System.setProperty("webdriver.ie.driver","C:\\iedriver/IEDriverServer.exe");
-//        mDriver = new InternetExplorerDriver();
+                break;
+            case 2:
+                System.out.println("Internet Explorer is selected");
+
+                System.setProperty("webdriver.ie.driver","C:\\iedriver/IEDriverServer.exe");
+                mDriver = new InternetExplorerDriver();
+                isIE = true;
+                break;
+            default:
+                System.out.println("No seleccionaste ningun explorador valido: 1: Chrome 2: Internet Explorer");
+        }
+
+    }
+
+    public boolean isIE() {
+        return isIE;
     }
 
     public WebDriver getDriver(){

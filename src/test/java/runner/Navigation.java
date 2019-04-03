@@ -8,7 +8,9 @@ import org.openqa.selenium.WebElement;
 
 public class Navigation {
 
-    private BrowserDriver browserDriver = new BrowserDriver();
+    //1: Chrome 2: Internet Explorer
+    private BrowserDriver browserDriver = new BrowserDriver(2);
+
 
     public void navigate(String url)throws Throwable {
         browserDriver.loadPage(url);
@@ -23,8 +25,18 @@ public class Navigation {
 
     public void complete(By element, String value)throws Throwable{
 
-        browserDriver.getDriver().findElement(element).sendKeys(value);
-//            throw new Exception("No se pudo completar" + type + "con el valor: " + value);
+        //Se ingresa caracter por caracter si el browser es IE dado que puede tener inconvenientes
+        if(browserDriver.isIE()){
+            while (!browserDriver.getDriver().findElement(element).getAttribute("value").equals(value)) {
+                for (int i = 0; i < value.length(); i++) {
+                    browserDriver.getDriver().findElement(element).sendKeys(value.substring(i, i + 1));
+                }
+            }
+        }
+        else {
+            browserDriver.getDriver().findElement(element).sendKeys(value);
+        }
+        //            throw new Exception("No se pudo completar" + type + "con el valor: " + value);
     }
 
     public void click(By element) {
