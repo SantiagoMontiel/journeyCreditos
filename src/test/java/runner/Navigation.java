@@ -9,11 +9,11 @@ import org.openqa.selenium.WebElement;
 public class Navigation {
 
     //1: Chrome 2: Internet Explorer
-    private BrowserDriver browserDriver = new BrowserDriver(2);
+    private BrowserDriver browserDriver = new BrowserDriver(1);
 
 
     public void navigate(String url)throws Throwable {
-        browserDriver.loadPage(url);
+        BrowserDriver.loadPage(url);
     }
 
     public void takeScreenshot(Scenario scenario) {
@@ -48,16 +48,12 @@ public class Navigation {
 
     public boolean exists(By element) throws Exception {
 
-        if (browserDriver.getDriver().findElements(element).size() > 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return browserDriver.getDriver().findElements(element).size() > 0;
     }
 //            throw new Exception("El tipo: " + type + "no es valido");
 
     public void close(){
-        browserDriver.close();
+        BrowserDriver.close();
     }
 
 }
