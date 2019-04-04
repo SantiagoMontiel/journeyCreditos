@@ -13,7 +13,8 @@ Automatización con Selenium WebDriver &amp; Cucumber
 
     Internet Explorer
     Crear una carpeta en el C:\iedriver y dejar el driver en esa ruta
-    ¡IMPORTANTE! Descargar la versión de 32 bits  
+    IMPORTANTE: Descargar la versión de 32 bits
+    
     
 * [Internet Explorer driver](https://www.seleniumhq.org/download/)
 
