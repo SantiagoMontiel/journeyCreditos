@@ -1,7 +1,7 @@
 # journeyCreditos
 Automatización con Selenium WebDriver &amp; Cucumber
 
-#Instalar drivers para los browsers
+# Instalar drivers para los browsers
     
     
     Chrome
