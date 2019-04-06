@@ -2,15 +2,11 @@ package pageObjects;
 
 import org.openqa.selenium.By;
 
-public class Login {
+public class Login extends PageBase{
 
     private String url = "http://localhost:3000/";
     private By fieldCuit = By.name("cuit");
     private By buttonEnviar = By.id("btn-submit-formCuit");
-
-//    private By fieldUser = By.name("userName");
-//    private By fieldPass = By.name("password");
-//    private By buttonAccept = By.xpath("//*[@id=\"root\"]/div/div/div[2]/div[2]/form/div[5]/button[1]");
 
     public String getUrl() {
         return url;
@@ -23,17 +19,5 @@ public class Login {
     public By getButtonEnviar() {
         return buttonEnviar;
     }
-
-    //    public By getFieldUser() {
-//        return fieldUser;
-//    }
-//
-//    public By getFieldPass() {
-//        return fieldPass;
-//    }
-//
-//    public By getButtonAccept() {
-//        return buttonAccept;
-//    }
 
 }

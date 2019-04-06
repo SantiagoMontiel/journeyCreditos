@@ -5,12 +5,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Navigation {
 
     //1: Chrome 2: Internet Explorer
     private BrowserDriver browserDriver = new BrowserDriver(1);
-
 
     public void navigate(String url)throws Throwable {
         BrowserDriver.loadPage(url);

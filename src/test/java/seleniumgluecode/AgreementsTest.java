@@ -11,36 +11,12 @@ import static java.lang.Thread.sleep;
 
 public class AgreementsTest {
 
-    Login pageLogin = new Login();
-    Navigation navigator = new Navigation();
-
-    @Given("^El usuario se encuentra en la pagina de ingreso de cuit$")
-    public void el_usuario_se_encuentra_en_la_pagina_de_ingreso_de_cuit() throws Throwable {
-        navigator.navigate(pageLogin.getUrl());
-    }
-
-    @Then("^Se muestra el Onboarding del usuario logueado$")
-    public void se_muestra_el_Onboarding_del_usuario_logueado() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        sleep(1000);
-    }
 
     @Then("^Se muestra el Onboarding del usuario con acuerdo vigente$")
     public void se_muestra_el_Onboarding_del_usuario_con_acuerdo_vigente() throws Throwable {
 //		if(!exists(By.xpath("//*[@id=\"root\"]/div/div/main"))){
 //			throw new Exception("No se muestra el Onboarding correctamente");
 //		}
-    }
-
-    @When("^Hace click en Enviar$")
-    public void hace_click_en_Enviar() throws Throwable {
-        navigator.click(pageLogin.getButtonEnviar());
-        sleep(2000);
-    }
-
-    @When("^El usuario ingresa \"([^\"]*)\"$")
-    public void el_usuario_ingresa(String cuit) throws Throwable {
-        navigator.complete(pageLogin.getFieldCuit(), cuit);
     }
 
     @Then("^Se muestra el Onboarding del usuario con acuerdo vigente sin margen disponible$")
@@ -55,9 +31,5 @@ public class AgreementsTest {
         sleep(1000);
     }
 
-    @After
-    public void closeBrowser(){
-        navigator.close();
-    }
 
 }
