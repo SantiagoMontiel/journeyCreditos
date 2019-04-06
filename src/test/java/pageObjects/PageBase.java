@@ -4,7 +4,7 @@ import runner.Navigation;
 
 public class PageBase {
 
-    Navigation navigator = new Navigation();
+    private Navigation navigator = new Navigation();
 
     public Navigation getNavigator() {
         return navigator;

@@ -1,15 +1,13 @@
 package seleniumgluecode;
 
-import cucumber.api.java.After;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import pageObjects.Login;
 import runner.Navigation;
 
 import static java.lang.Thread.sleep;
 
-public class AgreementsTest {
+public class AgreementsTest{
 
 
     @Then("^Se muestra el Onboarding del usuario con acuerdo vigente$")
